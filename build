@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -eux
+curuser=$(whoami)
+
+# Preparing env
+sudo apt-get install -y gcc-c++ yasm
+cp -ar .rpmmacros ~
+sudo apt-get install -y hasher
+sudo hasher-useradd $curuser
+mkdir ~/hasher
+
+# Build
+rpmbuild -ba RPM/SPECS/p7zip.spec

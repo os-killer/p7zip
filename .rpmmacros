@@ -1,4 +1,4 @@
 %packager Dmitriy V Genger <oskiller@altlinux.org>
 
-%_topdir	%homedir/RPM
-#%_tmppath	%homedir/tmp
+%_topdir	%homedir/p7zip/RPM
+#%_tmppath	%homedir/p7zip/tmp
