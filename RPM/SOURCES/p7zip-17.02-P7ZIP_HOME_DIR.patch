@@ -1,0 +1,19 @@
+diff --git a/CPP/myWindows/mySplitCommandLine.cpp b/CPP/myWindows/mySplitCommandLine.cpp
+index f8b99b8..7d762bc 100644
+--- a/CPP/myWindows/mySplitCommandLine.cpp
++++ b/CPP/myWindows/mySplitCommandLine.cpp
+@@ -105,12 +105,8 @@ static void GetCpuName(AString &s)
+ void mySplitCommandLine(int numArguments, char *arguments[],UStringVector &parts) {
+ 
+   { // define P7ZIP_HOME_DIR
+-    static char p7zip_home_dir[MAX_PATH];
+-    AString dir,name;
+-    my_windows_split_path(arguments[0],dir,name);
+-    snprintf(p7zip_home_dir,sizeof(p7zip_home_dir),"P7ZIP_HOME_DIR=%s/",(const char *)dir);
+-    p7zip_home_dir[sizeof(p7zip_home_dir)-1] = 0;
+-    putenv(p7zip_home_dir);
++    if(getenv("P7ZIP_HOME_DIR") == NULL)
++       putenv("P7ZIP_HOME_DIR=" P7ZIP_HOME_DIR);
+   }
+ 
+ #ifdef ENV_HAVE_LOCALE
