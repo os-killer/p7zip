@@ -9,6 +9,7 @@ License: LGPLv2+ with UnRAR exception
 Group: Archiving/Compression
 
 Url: https://github.com/p7zip-project/p7zip
+# Source-url: https://github.com/p7zip-project/p7zip/archive/refs/tags/v%version.tar.gz
 Source: v%version.tar.gz
 Patch0: p7zip-17.02-P7ZIP_HOME_DIR.patch
 Patch1: p7zip-17.05-ZIP_STRING_LENGTH.patch
